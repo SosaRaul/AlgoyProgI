@@ -1,0 +1,31 @@
+-- Para declarar un puntero
+type *mypointer;
+
+-- Para inicializarlo
+mypointer = NULL;
+
+-- Para desreferenciarlo(obtener su contenido)
+cout << *mypointer
+
+-- Para asignar dinámicamente memoria y asignar un valor a su contenido.
+type *mypointer = new type(value);
+
+-- Para asignar dinámicamente un array 
+type *mypointer = new type[length];
+
+**!! NOSOTROS SOMOS RESPONSABLES DE LIBERAR LA MEMORIA QUE NO USEMOS O TENDREMOS UN MEMORY LEAK(la memoria no se libera hasta que el programa termina.)
+En el caso de los vectores estáticos el compilador se encarga autómaticamente de liberar lo que no usa.
+
+-- Deallocamos con delete
+delete mypointer;
+delete[] myarray;
+
+** La memoria que asignamos dinámicamente está el HEAP , mientras la que usan varibles no estáticas y locales vive en STACK.
+-- ¿Qué pasa si no hay suficiente memoria en el HEAP cuando la pedimos?
+Nos dará una excepción del tipo std::bad_alloc, unless “nothrow” is used with the new operator, in which case it returns a NULL pointer.
+
+int *p = new(nothrow) int;
+if (!p)
+{
+   cout << "Memory allocation failed\n";
+}

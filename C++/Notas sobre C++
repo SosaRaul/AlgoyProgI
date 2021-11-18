@@ -1,0 +1,14 @@
+Recordatorio o cosas que voy aprendiendo de C++
+
+** ¿Cómo declarar un array en C++?
+
+type name[quantity];
+ => quantity debe ser una expresión constante ya que los arrays son bloques de memoria estática
+    cuyo tamaño debe conocerse al momento de la compilación
+
+** ¿Cómo inicializar un array en C++?
+
+type name[quantity] = {}; // Inicializo el array con todos 0
+type name[5] = {1,23,3,1,2};
+
+
